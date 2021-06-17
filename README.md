@@ -1,6 +1,5 @@
 # agilizei-4.0
 <h1 align="center">Imersão em Cypress</h1>
-<p align="center">Para você explorar automação de testes na prática</p>
 
 ---
 
