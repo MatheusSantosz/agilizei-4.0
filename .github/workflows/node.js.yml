@@ -1,37 +1,47 @@
 name: Node.js CI
 
+
 on:
   push:
-    branches: 
-    - main
+    branches: [ main ]
 
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'branch'
+        required: true
+        default: 'main'
+      project:
+        description: 'project'
+        required: false
+        default: 'cypress'
+
 
 jobs:
-  build:
-
+  cypress-run:
+    name: Cypress run
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        # run 1 copies of the current job in parallel
+        containers: [1]
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2.1.5
-      with:
-        node-version: 14.x
-        
-    # instalacao das dependências
-    - run: npm install
-    
-    # execucao dos testes
-    - run: npx cypress run
-         env:
-        # pass the Dashboard record key as an environment variable
-        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}  
-    # upload dos vídeos gerados
-    - name: Upload videos
-      uses: actions/upload-artifact@v2.2.3
-      if: always()
-      with:
-        name: videos
-        path: cypress/videos
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          record: true
+          parallel: true
+          browser: chrome
+          ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
+          config-file: cypress.json
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: "0cbe3b2e-66c6-48c8-b4d9-84a8ecccd055"
+
+      - run: |
+          echo "Projeto: ${{ github.event.inputs.project }}!"
+          echo "Branch: ${{ github.event.inputs.branch }}!"
+ 
