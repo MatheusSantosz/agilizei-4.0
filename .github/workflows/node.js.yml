@@ -39,7 +39,7 @@ jobs:
           config-file: cypress.json
         env:
           # pass the Dashboard record key as an environment variable
-          CYPRESS_RECORD_KEY: "0cbe3b2e-66c6-48c8-b4d9-84a8ecccd055"
+          CYPRESS_RECORD_KEY: "9e300b21-94c5-4e1d-bfce-8fceb06615f4"
 
       - run: |
           echo "Projeto: ${{ github.event.inputs.project }}!"
