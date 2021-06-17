@@ -25,7 +25,9 @@ jobs:
     
     # execucao dos testes
     - run: npx cypress run
-        
+         env:
+        # pass the Dashboard record key as an environment variable
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}  
     # upload dos vídeos gerados
     - name: Upload videos
       uses: actions/upload-artifact@v2.2.3
