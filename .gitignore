@@ -1,10 +1,4 @@
-# Node
 node_modules
-
-
-# Cypress
+package-lock.json
 cypress/screenshots
 cypress/videos
-
-# Misc
-.DS_Store
