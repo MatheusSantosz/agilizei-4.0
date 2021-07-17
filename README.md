@@ -1,15 +1,17 @@
 # agilizei-4.0
+
 <h1 align="center">Imersão em Cypress</h1>
 
 ---
 
-***Hey! Perdeu o conteúdo da Imersão?***
+**_Hey! Perdeu o conteúdo da Imersão?_**
 
 ---
 
 ## Setup
 
 ### Pré-requisitos:
+
 - Instalar o NodeJS
 - Instalar um editor de texto, como o Visual Studio Code
 - Instalar o Git (caso queira trabalhar com projeto em sua máquina)
@@ -29,9 +31,9 @@ Conteúdo abordado durante o treinamento de Cypress do evento Imersão do Agiliz
 - Como documentar comandos customizados
 - Como mapear elementos usando get / contains
 - Como adicionar uma asserção usando o should
-- Como iterar em uma lista de elementos usando o each 
-- Como usar mocks para isolar o teste de fatores externos 
-- Como trabalhar com hooks durante o teste 
+- Como iterar em uma lista de elementos usando o each
+- Como usar mocks para isolar o teste de fatores externos
+- Como trabalhar com hooks durante o teste
 - Como aplicar algumas boas práticas (baseUrl, evitar navegação quando possível)
 - Como executar os testes no modo headless e visualizar o vídeo
 
@@ -40,6 +42,7 @@ Conteúdo abordado durante o treinamento de Cypress do evento Imersão do Agiliz
 - Variáveis e constantes
 - Funções
 - Condicional
+- Metodos
 - Stringificação de objetos
 - Desestruturação de objetos
 
